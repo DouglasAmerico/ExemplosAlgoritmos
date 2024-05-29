@@ -3,7 +3,7 @@
 
 using namespace std;
 
-const int quantidadeMaximaDeProdutos_DAA = 4;
+const int quantidadeMaximaDeProdutos_DAA = 3;
 int seletorMenu_DAA; // opção selecionada no menu
 int controleQuantidadeCadastrados_DAA = 3; //variavel para controlar quantos produtos foram cadastrados
 const int retornoInformativoDeErro_DAA = 404; //constante criada para ser um valor de retorno que 
