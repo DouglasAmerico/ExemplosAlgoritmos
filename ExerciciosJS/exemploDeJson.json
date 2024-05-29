@@ -1,0 +1,11 @@
+{
+    "nome": "Douglas",
+    "idade": 28,
+    "cidade": "Campo Mourão",
+    "hobbies": ["futebol", "leitura", "música","filmes"],
+    "endereço": {
+        "rua": "Ab Brasil",
+        "numero": 12345,
+        "bairro": "Vila das Candeias"
+    }
+}
