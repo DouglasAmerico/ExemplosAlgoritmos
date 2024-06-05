@@ -1,7 +1,13 @@
 import java.util.Scanner;
 
-public class BaseMiniCurso {
-           
+public class BaseMiniCursoVetoresMatrizes {
+
+    static 
+        Integer 
+            prova1= 0, 
+            prova2= 1,
+            trabalho= 2;
+    //declarando constantes para armazenar os codigos para usar como linhas nas matrizes
 
    public static Integer[] valoresProva1(String nome[]){
         Integer prova1[] = new Integer[3];
@@ -15,7 +21,8 @@ public class BaseMiniCurso {
         
         return prova1;
     }
-      public static Integer[] valoresProva2(String nome[]){
+    
+    public static Integer[] valoresProva2(String nome[]){
         Integer prova2[] = new Integer[3];
         Scanner grava = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
@@ -27,7 +34,8 @@ public class BaseMiniCurso {
         
         return prova2;
     }
-      public static Integer[] trabalhosnotas(String nome[]){
+    
+    public static Integer[] trabalhosnotas(String nome[]){
         Integer trabalhos[] = new Integer[3];
         Scanner grava = new Scanner(System.in);
         for (int i = 0; i < 3; i++) {
@@ -39,14 +47,16 @@ public class BaseMiniCurso {
         
         return trabalhos;
     }
-      public static Double[] calculoDasNotas(Integer prova1[], Integer prova2[], Integer trabalhos[]){
+    
+    public static Double[] calculoDasNotas(Integer prova1[], Integer prova2[], Integer trabalhos[]){
         Double somaNotas[] = new Double[3];
         for (int i = 0;i<3; i++){
              somaNotas[i] = prova1[i]*0.4 + prova2[i]*0.3 + trabalhos[i]*0.3;
         }
         return somaNotas;
     }
-      public static String[] aprovados(Double somaNotas[], String alunosAprovados[]){
+    
+    public static String[] aprovados(Double somaNotas[], String alunosAprovados[]){
           
           for(int i=0; i<3; i++){
               if (somaNotas[i] >=7){
@@ -60,29 +70,30 @@ public class BaseMiniCurso {
        return alunosAprovados;
       }
 
-    public static void main(String[] args) {        
-        String nomes[] = new String[3];
-        Integer prova1[] = new Integer[3];
-        Integer prova2[] = new Integer[3];
-        Integer trabalhos[] = new Integer[3];
+    public static void main(String[] args) {    
+        Scanner grava = new Scanner(System.in);
+        System.out.println("Quantos alunos serão inseridos? ");
+        Integer tamanho = grava.nextInt();
+
+        String nomes[] = new String[tamanho];
+        Integer notas[][] = new Integer[3][tamanho];
         Double somaNotas[] = new Double[3];
         String alunosAprovados[] = new String[3];
-        Scanner grava = new Scanner(System.in);
+
         
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < tamanho; i++) {
             System.out.println("Por favor informa o nome do Aluno "+ (i+1)+": ");
             nomes[i]= grava.next();
         }
         
-        prova1 = valoresProva1(nomes);
-        prova2 = valoresProva2(nomes);
-        trabalhos = trabalhosnotas(nomes);
-        somaNotas = calculoDasNotas(prova1, prova2, trabalhos);
+        //notas = valoresProva1(nomes);
+        //prova2 = valoresProva2(nomes);
+        //trabalhos = trabalhosnotas(nomes);
+        //somaNotas = calculoDasNotas(prova1, prova2, trabalhos);
         alunosAprovados = aprovados(somaNotas, alunosAprovados);
 
         for (int i = 0; i < 3; i++) {
             System.out.println("O aluno: "+nomes[i]+" foi "+alunosAprovados[i]);
         }
-    }
-    
+    }   
 }
