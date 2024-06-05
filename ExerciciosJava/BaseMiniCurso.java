@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Curso {
+public class BaseMiniCurso {
            
 
    public static Integer[] valoresProva1(String nome[]){
