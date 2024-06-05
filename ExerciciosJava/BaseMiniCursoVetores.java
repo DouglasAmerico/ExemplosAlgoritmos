@@ -52,12 +52,12 @@ public class BaseMiniCursoVetores {
     
     public static String[] aprovados(Double somaNotas[], String alunosAprovados[], Integer qtdAlunos){
           
-          for(int i=0; i<3; i++){
-              if (somaNotas[i] >=7){
+          for(int i=0; i<qtdAlunos; i++){
+              if (somaNotas[i] >=70){
                   alunosAprovados[i] = "Aprovado";
-              }else if(somaNotas[i] >=4){
+              }else if(somaNotas[i] >=40){
                   alunosAprovados[i] = "Exame";
-              }else if(somaNotas[i]<4){
+              }else{
                   alunosAprovados[i] = "Reprovado";
               }
           }
@@ -66,6 +66,7 @@ public class BaseMiniCursoVetores {
 
     public static void main(String[] args) {        
         Scanner grava = new Scanner(System.in);
+        System.out.println("Irá informar a nota de quantos alunos?");
         Integer qtdAlunos = grava.nextInt();
         
         String nomes[] = new String[qtdAlunos];
@@ -88,7 +89,7 @@ public class BaseMiniCursoVetores {
         alunosAprovados = aprovados(somaNotas, alunosAprovados,qtdAlunos);
 
         for (int i = 0; i < qtdAlunos; i++) {
-            System.out.println("O aluno: "+nomes[i]+" foi "+alunosAprovados[i]);
+            System.out.println("O aluno: "+nomes[i]+" foi "+alunosAprovados[i]+" com a nota "+somaNotas[i]);
         }
     }   
 }
