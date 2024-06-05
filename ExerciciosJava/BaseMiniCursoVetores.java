@@ -5,11 +5,11 @@ public class BaseMiniCursoVetores {
 
    public static Integer[] valoresProva1(String nome[], Integer qtdAlunos){
         Integer prova1[] = new Integer[qtdAlunos];
-        Scanner grava = new Scanner(System.in);
+        Scanner leitor = new Scanner(System.in);
         for (int i = 0; i < qtdAlunos; i++) {
             do{
                 System.out.println("Por favor insira o valor da Prova 1 do Aluno "+nome[i]+": ");
-                prova1[i]= grava.nextInt();
+                prova1[i]= leitor.nextInt();
             }while(prova1[i] > 100 || prova1[i] < 0);
         }
         
@@ -18,11 +18,11 @@ public class BaseMiniCursoVetores {
     
     public static Integer[] valoresProva2(String nome[], Integer qtdAlunos){
         Integer prova2[] = new Integer[qtdAlunos];
-        Scanner grava = new Scanner(System.in);
+        Scanner leitor = new Scanner(System.in);
         for (int i = 0; i < qtdAlunos; i++) {
             do{
                 System.out.println("Por favor insira o valor da Prova 2 do Aluno "+nome[i]+": ");
-                prova2[i]= grava.nextInt();
+                prova2[i]= leitor.nextInt();
             }while(prova2[i] > 100 || prova2[i] < 0);
         }
         
@@ -31,11 +31,11 @@ public class BaseMiniCursoVetores {
     
     public static Integer[] trabalhosnotas(String nome[], Integer qtdAlunos){
         Integer trabalhos[] = new Integer[qtdAlunos];
-        Scanner grava = new Scanner(System.in);
+        Scanner leitor = new Scanner(System.in);
         for (int i = 0; i < qtdAlunos; i++) {
             do{
                 System.out.println("Por favor insira o valor dos trabalhos do Aluno "+nome[i]+": ");
-                trabalhos[i]= grava.nextInt();
+                trabalhos[i]= leitor.nextInt();
             }while(trabalhos[i] > 100 || trabalhos[i] < 0);
         }
         
@@ -65,9 +65,9 @@ public class BaseMiniCursoVetores {
       }
 
     public static void main(String[] args) {        
-        Scanner grava = new Scanner(System.in);
+        Scanner leitor = new Scanner(System.in);
         System.out.println("Irá informar a nota de quantos alunos?");
-        Integer qtdAlunos = grava.nextInt();
+        Integer qtdAlunos = leitor.nextInt();
         
         String nomes[] = new String[qtdAlunos];
         Integer prova1[] = new Integer[qtdAlunos];
@@ -79,7 +79,7 @@ public class BaseMiniCursoVetores {
         
         for (int i = 0; i < qtdAlunos; i++) {
             System.out.println("Por favor informa o nome do Aluno "+ (i+1)+": ");
-            nomes[i]= grava.next();
+            nomes[i]= leitor.next();
         }
         
         prova1 = valoresProva1(nomes,qtdAlunos);
