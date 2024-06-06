@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class BaseMiniCursoVetores {
+public class LeitorDeNotas {
            
 
    public static Integer[] valoresProva1(String nome[], Integer qtdAlunos){
