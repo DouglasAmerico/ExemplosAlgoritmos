@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class projetoMiniCurso {
     static Scanner leitor = new Scanner(System.in);//variavel scanner
+    static String p1= "Prova 1", p2= "Prova 2", tb= "Trabalhos";
 
     public static Integer[] valoresDeAvalicoes(String nome[],String tipo){
         Integer avaliacao[] = new Integer[3];
@@ -20,8 +21,27 @@ public class projetoMiniCurso {
     public static Double[] retornoDasMedias(Integer prova1[],Integer prova2[],Integer trabalhos[]){
         Double medias[] = new Double[3];
 
+        for(int i=0;i<3;i++){
+            medias[i]= (prova1[i]*0.4) + (prova2[i]*0.3) + (trabalhos[i]*0.3);
+        }
 
         return medias;
+    }
+
+    public static String[] calculoDeStatus(Double medias[]){
+        String status[] = new String[3];
+
+        for(int i=0;i<3;i++){
+            if(medias[i] >= 7.0){
+                status[i]= "Aprovado";
+            }else if(medias[i] >= 4.0){
+                status[i]= "Exame";
+            }else{
+                status[i]= "Reprovado";
+            }
+        }
+
+        return status;
     }
 
     public static void main(String[] args) {
@@ -37,12 +57,20 @@ public class projetoMiniCurso {
             nomes[i] = leitor.next();
         }
 
-        prova1 = valoresDeAvalicoes(nomes,"Prova 1");
-        prova2 = valoresDeAvalicoes(nomes,"Prova 2");
-        trabalhos = valoresDeAvalicoes(nomes,"Trabalhos");
+        prova1 = valoresDeAvalicoes(nomes,p1);
+        prova2 = valoresDeAvalicoes(nomes,p2);
+        trabalhos = valoresDeAvalicoes(nomes,tb);
         medias = retornoDasMedias(prova1,prova2,trabalhos);
 
-        //deve ser apresentado os nomes dos alunos, o status (aprovado, reprovado e Exame) e a media do mesmo
+        for(int i=0;i<3;i++){
+            System.out.println("------------------------------");
+            System.out.println("O aluno(a) "+nomes[i]+" obteve as notas");
+            System.out.println(p1+": "+prova1[i]);
+            System.out.println(p2+": "+prova2[i]);
+            System.out.println(tb+": "+trabalhos[i]);
+            System.out.println("Com a media: "+medias[i]);
+            System.out.println("Ficou com o status: "+status[i]);
+        }
     }
 
 }
