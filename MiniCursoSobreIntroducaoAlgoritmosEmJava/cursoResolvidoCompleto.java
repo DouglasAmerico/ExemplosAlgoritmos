@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class projetoMiniCurso {
+public class cursoResolvidoCompleto {
     static Scanner leitor = new Scanner(System.in);//variavel scanner
     static String p1= "Prova 1", p2= "Prova 2", tb= "Trabalhos";
 
@@ -61,6 +61,7 @@ public class projetoMiniCurso {
         prova2 = valoresDeAvalicoes(nomes,p2);
         trabalhos = valoresDeAvalicoes(nomes,tb);
         medias = retornoDasMedias(prova1,prova2,trabalhos);
+        status = calculoDeStatus(medias);
 
         for(int i=0;i<3;i++){
             System.out.println("------------------------------");
