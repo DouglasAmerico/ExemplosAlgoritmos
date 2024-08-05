@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class LeitorDeNotasMelhorado {
            
-
     public static  Integer[] avaliacoes(String nome[], Integer qtdAlunos, String tipo){
         Integer avaliacao[] = new Integer[qtdAlunos];
         Scanner leitor = new Scanner(System.in);
@@ -12,7 +11,6 @@ public class LeitorDeNotasMelhorado {
                 avaliacao[i]= leitor.nextInt();
             }while(avaliacao[i] > 100 || avaliacao[i]<0);
         }
-
         return avaliacao;
     }
 
@@ -25,7 +23,6 @@ public class LeitorDeNotasMelhorado {
     }
     
     public static String[] aprovados(Double somaNotas[], String alunosAprovados[], Integer qtdAlunos){
-          
           for(int i=0; i<qtdAlunos; i++){
               if (somaNotas[i] >=70){
                   alunosAprovados[i] = "Aprovado";
@@ -36,7 +33,7 @@ public class LeitorDeNotasMelhorado {
               }
           }
        return alunosAprovados;
-      }
+    }
 
     public static void main(String[] args) {        
         try (Scanner leitor = new Scanner(System.in)) {
