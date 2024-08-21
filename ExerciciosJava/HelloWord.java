@@ -5,6 +5,6 @@ public class HelloWord{
 		Scanner prompt = new Scanner(System.in);
 
 		String nome = prompt.next();
-		System.out.println("O professor se chama: "+nome);
+		System.out.println("/nO professor se chama: "+nome);
 	}
 }
