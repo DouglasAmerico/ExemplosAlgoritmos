@@ -2,3 +2,6 @@ node_modules/
 .vscode/*
 package-lock.json
 ExerciciosJS/teste.js
+out/
+.idea
+ExemplosAlgoritmos.iml
